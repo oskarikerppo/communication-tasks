@@ -40,7 +40,7 @@ class CommunicationMatrix:
         self.lambda_min = lambda_min
         return lambda_min
 
-    def calculate_lambda_man(self) -> float:
+    def calculate_lambda_max(self) -> float:
         """Calculate the lambda max of the communication matrix.
 
         Returns:
