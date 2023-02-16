@@ -4,12 +4,15 @@ from typing import Optional
 import numpy as np
 
 import monotones
+from utils import matrix_is_rowstochastic
 
 
 class CommunicationMatrix:
     """A class which defines all relevant features of communication tasks."""
 
     def __init__(self, matrix: np.ndarray) -> None:
+        if not matrix_is_rowstochastic(matrix):
+            raise ValueError("Input matrix is not row-stochastic!")
         self.matrix = matrix
         self.nrows: int = matrix.shape[0]
         self.ncols: int = matrix.shape[1]
