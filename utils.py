@@ -16,10 +16,3 @@ def matrix_is_rowstochastic(matrix: np.ndarray) -> bool:
         if sum(row) != 1:
             return False
     return True
-
-
-if __name__ == "__main__":
-    test_matrix_1 = np.array([[1, 0], [0.5, 0.5]])
-    test_matrix_2 = np.array([[1, 0], [0.5, 0.6]])
-    print(matrix_is_rowstochastic(test_matrix_1))
-    print(matrix_is_rowstochastic(test_matrix_2))
