@@ -40,3 +40,12 @@ repos:
     rev: 1.7.4
     hooks:
     - id: bandit
+-   repo: local
+    hooks:
+    -   id: unittest
+        name: unittest
+        entry: python -m unittest discover
+        language: python
+        'types': [python]
+        additional_dependencies: [numpy]
+        pass_filenames: false
