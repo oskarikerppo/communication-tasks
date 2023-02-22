@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "communication-tasks"
+version = "0.1.0"
+description = "A package to study communication tasks and the relevant mathematical tools."
+authors = ["Oskari Kerppo <okerppo@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+packages = [{include = "communication_tasks"}]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+numpy = "^1.24.2"
+
+[tool.poetry.group.dev.dependencies]
+black = "^23.1.0"
+flake8 = "^6.0.0"
+isort = "^5.12.0"
+mypy = "^1.0.1"
+pre-commit = "^3.0.4"
+pylint = "^2.16.2"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

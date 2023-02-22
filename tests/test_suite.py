@@ -4,8 +4,8 @@ import unittest
 
 import numpy as np
 
-from communication_matrices import CommunicationMatrix
-from utils import matrix_is_rowstochastic
+from communication_tasks.communication_matrices import CommunicationMatrix
+from utils.utils import matrix_is_rowstochastic
 
 
 class TestCommunication(unittest.TestCase):

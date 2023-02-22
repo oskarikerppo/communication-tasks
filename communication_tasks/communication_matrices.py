@@ -3,8 +3,8 @@ from typing import Optional
 
 import numpy as np
 
-import monotones
-from utils import matrix_is_rowstochastic
+from communication_tasks import monotones
+from utils.utils import matrix_is_rowstochastic
 
 
 class CommunicationMatrix:
