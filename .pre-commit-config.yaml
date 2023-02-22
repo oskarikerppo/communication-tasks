@@ -39,13 +39,12 @@ repos:
 -   repo: https://github.com/PyCQA/bandit
     rev: 1.7.4
     hooks:
-    - id: bandit
+    -   id: bandit
 -   repo: local
     hooks:
-    -   id: unittest
-        name: unittest
-        entry: python -m unittest discover
-        language: python
-        'types': [python]
-        additional_dependencies: [numpy]
+    -   id: pytest-check
+        name: pytest-check
+        entry: pytest tests.py
+        language: system
         pass_filenames: false
+        always_run: true
