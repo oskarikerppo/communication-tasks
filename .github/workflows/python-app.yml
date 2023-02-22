@@ -43,7 +43,7 @@ jobs:
       uses: psf/black@stable
       with:
         options: "--check --verbose"
-        src: "./src"
+        src: "."
         version: "23.1.0"
     - name: mypy
       run: |
