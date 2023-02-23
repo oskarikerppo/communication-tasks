@@ -32,6 +32,7 @@ jobs:
         poetry --help
 
     - name: Install dependencies
+      shell: bash
       run: |
         python -m poetry install
 
