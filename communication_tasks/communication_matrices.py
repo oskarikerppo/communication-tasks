@@ -20,7 +20,7 @@ class CommunicationMatrix:
         self.lambda_min: Optional[float] = None
         self.lambda_max: Optional[float] = None
 
-    def calculate_rank(self) -> int:
+    def calculate_rank(self) -> str:
         """Calculate the rank of the communication matrix.
 
         Returns:
