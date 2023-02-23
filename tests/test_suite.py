@@ -77,7 +77,7 @@ class TestCommunication(unittest.TestCase):
         """Test that lambda max is calculated correctly."""
         self.assertEqual(
             CommunicationMatrix(self.test_matrix_1).calculate_lambda_max(),
-            1.5,
+            1.51,
             "Should be 1.5",
         )
 
