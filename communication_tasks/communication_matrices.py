@@ -1,12 +1,10 @@
 """A module for implementing communication tasks."""
 from typing import Optional
 
-from communication_tasks import monotones
-from utils.utils import matrix_is_rowstochastic
-
 import numpy as np
 
-
+from communication_tasks import monotones
+from utils.utils import matrix_is_rowstochastic
 class CommunicationMatrix:
     """A class which defines all relevant features of communication tasks."""
 
