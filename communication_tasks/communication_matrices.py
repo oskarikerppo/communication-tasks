@@ -5,6 +5,8 @@ import numpy as np
 
 from communication_tasks import monotones
 from utils.utils import matrix_is_rowstochastic
+
+
 class CommunicationMatrix:
     """A class which defines all relevant features of communication tasks."""
 
