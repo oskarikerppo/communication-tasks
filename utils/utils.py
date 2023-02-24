@@ -1,5 +1,7 @@
 """Definitions for commonly used utility functions."""
 
+from math import isclose
+
 import numpy as np
 
 
@@ -13,7 +15,7 @@ def matrix_is_rowstochastic(matrix: np.ndarray) -> bool:
         bool: True if matrix is row-stochastic else False
     """
     for row in matrix:
-        if sum(row) != 1:
+        if not isclose(sum(row), 1):
             return False
     return True
 
