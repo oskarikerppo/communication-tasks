@@ -16,3 +16,18 @@ def matrix_is_rowstochastic(matrix: np.ndarray) -> bool:
         if sum(row) != 1:
             return False
     return True
+
+
+def vector_set_is_orthogonal(matrix: np.ndarray) -> bool:
+    """Return true if the input matrix is orthogonal, i.e., all rows
+    of the input matrix are orthogonal.
+
+    Args:
+        matrix (np.ndarray): the input matrix
+
+    Returns:
+        bool: True if matrix is orthogonal, False otherwise
+    """
+    matrix_product = matrix @ matrix.T
+    id_matrix = np.identity(len(matrix_product))
+    return np.allclose(matrix_product, id_matrix)
