@@ -88,3 +88,11 @@ class TestCommunication(unittest.TestCase):
             -0.5,
             "Should be -0.5",
         )
+
+    def test_iota(self):
+        """Test that iota is calculated correctly."""
+        self.assertEqual(
+            CommunicationMatrix(self.test_matrix_3).calculate_iota(),
+            2,
+            "Should be 2",
+        )

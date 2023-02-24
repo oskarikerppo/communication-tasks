@@ -29,5 +29,6 @@ def vector_set_is_orthogonal(matrix: np.ndarray) -> bool:
         bool: True if matrix is orthogonal, False otherwise
     """
     matrix_product = matrix @ matrix.T
+    matrix_product[matrix_product.nonzero()] = 1  # normalize nonzero entries
     id_matrix = np.identity(len(matrix_product))
     return np.allclose(matrix_product, id_matrix)
