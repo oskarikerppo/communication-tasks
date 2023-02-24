@@ -1,6 +1,10 @@
 """Module implementing known ultraweak monotone functions."""
 
+import itertools
+
 import numpy as np
+
+from utils.utils import vector_set_is_orthogonal
 
 
 def rank(matrix: np.ndarray) -> int:
@@ -45,3 +49,22 @@ def lambda_max(matrix: np.ndarray) -> float:
     for row in matrix_transpose:
         value += max(row)
     return value
+
+
+def iota(matrix: np.ndarray) -> int:
+    """Calculate the iota monotone for a matrix.
+    Iota is defined as the maximal number of orthogonal rows.
+
+    Args:
+        matrix (np.ndarray): the input matrix
+
+    Returns:
+        int: maximal number of orthogonal rows
+    """
+    idx_list = list(range(len(matrix)))
+    for k in range(len(matrix), 1, -1):
+        combinations = itertools.combinations(idx_list, k)
+        for combination in combinations:
+            if vector_set_is_orthogonal(matrix[(list(combination))]):
+                return k
+    return 1

@@ -19,6 +19,7 @@ class CommunicationMatrix:
         self.rank: Optional[int] = None
         self.lambda_min: Optional[float] = None
         self.lambda_max: Optional[float] = None
+        self.iota: Optional[int] = None
 
     def calculate_rank(self) -> int:
         """Calculate the rank of the communication matrix.
@@ -49,3 +50,13 @@ class CommunicationMatrix:
         lambda_max = monotones.lambda_max(self.matrix)
         self.lambda_max = lambda_max
         return lambda_max
+
+    def calculate_iota(self) -> int:
+        """Calculate the iota of the communication matrix.
+
+        Returns:
+            int: maximal number of orthogonal rows of the matrix
+        """
+        iota = monotones.iota(self.matrix)
+        self.iota = iota
+        return iota
