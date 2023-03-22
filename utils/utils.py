@@ -41,7 +41,7 @@ def exp_distribution(number: float) -> float:
     """Sample from exponential distribution.
 
     Args:
-        number (float): random uniform number from [0, 1)
+        number (float): random uniform number from [0, 1).
 
     Returns:
         float: -1 times natural logarithm of number
@@ -62,6 +62,6 @@ def sample_random_row_stochastic_matrix(shape: Tuple[int, int]) -> np.ndarray:
         np.ndarray: Randomly sampled row-stochastic matrix.
     """
     random_matrix = np.random.rand(*shape)
-    random_matrix = exp_distribution(random_matrix)
+    random_matrix = np.vectorize(exp_distribution)(random_matrix)
     random_matrix = (random_matrix.T / random_matrix.sum(axis=1)).T
     return random_matrix
