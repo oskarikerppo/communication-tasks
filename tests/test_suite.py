@@ -4,8 +4,11 @@ import unittest
 
 import numpy as np
 
-from communication_tasks.communication_matrices import CommunicationMatrix
-from utils.utils import matrix_is_rowstochastic
+from communication_tasks.communication_matrices import (
+    CommunicationMatrix,
+    RandomCommunicationMatrix,
+)
+from utils.utils import matrix_is_rowstochastic, sample_random_row_stochastic_matrix
 
 
 class TestCommunication(unittest.TestCase):
@@ -58,6 +61,14 @@ class TestCommunication(unittest.TestCase):
         """Test that row-stochastic matrix is row-stochastic."""
         self.assertEqual(matrix_is_rowstochastic(self.k_plus), True, "Should be True")
 
+    def test_random_row_stochastic_matrix(self):
+        """Test that random row-stochastic matrix is row-stochastic."""
+        self.assertEqual(
+            matrix_is_rowstochastic(sample_random_row_stochastic_matrix(shape=(5, 5))),
+            True,
+            "Should be True",
+        )
+
     def test_not_row_stochastic_matrix(self):
         """Test that non-row-stochastic matrix is not row-stochastic."""
         self.assertEqual(
@@ -70,6 +81,14 @@ class TestCommunication(unittest.TestCase):
         """Test that communication matrix is formed correctly."""
         self.assertEqual(
             matrix_is_rowstochastic(CommunicationMatrix(self.d_3_1_3).matrix),
+            True,
+            "Should be True",
+        )
+
+    def test_random_communication_matrix_initialization(self):
+        """Test that communication matrix is formed correctly."""
+        self.assertEqual(
+            matrix_is_rowstochastic(RandomCommunicationMatrix(shape=(5, 5)).matrix),
             True,
             "Should be True",
         )
