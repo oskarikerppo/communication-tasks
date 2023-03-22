@@ -1,10 +1,10 @@
 """A module for implementing communication tasks."""
-from typing import Optional
+from typing import Optional, Tuple
 
 import numpy as np
 
 from communication_tasks import monotones
-from utils.utils import matrix_is_rowstochastic
+from utils.utils import matrix_is_rowstochastic, sample_random_row_stochastic_matrix
 
 
 class CommunicationMatrix:
@@ -60,3 +60,11 @@ class CommunicationMatrix:
         iota = monotones.iota(self.matrix)
         self.iota = iota
         return iota
+
+
+class RandomCommunicationMatrix(CommunicationMatrix):
+    """Initialize a random communication matrix with the given shape."""
+
+    def __init__(self, shape: Tuple[int, int]) -> None:
+        matrix = sample_random_row_stochastic_matrix(shape)
+        super().__init__(matrix)
